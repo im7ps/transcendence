@@ -1,0 +1,1248 @@
+@font-face {
+    font-family: "Retro Pixel";
+    src: url("./RetroPixel-7BZol.otf") format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Kanit", Arial, sans-serif;
+    background-color: #ececec!important;
+}
+
+div.container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: stretch;
+	flex-wrap: nowrap;
+}
+
+#app {
+	width: 100%;
+	height: 100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#login, #registration, #home, #home, #friends, #game, #tournaments, #chat, #settings, #userDetails, #statistics, #addFriendForm, #insights, 
+#nav_home_icon, #nav_login_icon, #nav_registration_icon, #nav_login42_icon, #nav_userDetails_icon, #nav_font_icon, #nav_fade_icon, #play_again_2D, #canvas_pong_2D {
+	display: none;
+}
+
+#chat {
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+
+#canvas-container
+{
+	position: relative;
+	display: inline-block;
+	/* transform: translateY(10px); */
+
+}
+
+#play_again_2D {
+	background-color: red;
+	position: absolute;
+    width: 130px;
+    height: 30px;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+	border: none;
+}
+
+/*----------------------------- LANDING ---------------------------------*/
+
+#landing {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/*----------------------------- LANDING ENDS ----------------------------*/
+
+
+
+#login {
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#registration {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#space {
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+#form_registration {
+	display: flex;
+	flex-direction: column;
+}
+
+/* ------------------ INSIGHTS ----------------*/
+
+#insights {
+    width: 50%;
+    height: 100%;
+	display: grid;
+	grid-template-columns: 1fr 4fr;
+    justify-content: center;
+    align-items: center;
+	margin-right: 5px;
+}
+
+#insights-right {
+	width: 50%;
+    height: 100%;
+	display: none;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#graph {
+	width: 100%;
+    height: 50%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#stat_canvas {
+	width: 100%; /* Occupare tutto lo spazio disponibile nel contenitore */
+	height: 125%; /* Altezza fissa, può essere modificata secondo necessità */
+	border: 1px solid #ccc;
+	margin-top: 62px;
+}
+
+#podium {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-end;
+	width: 100%;
+    height: 50%;
+}
+
+.bar {
+    width: 30%;
+    background-color: #4caf50;
+    margin: 0 5px;
+    border-radius: 5px 5px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    color: white;
+    font-weight: bold;
+    transition: height 0.5s ease;
+}
+
+#bar1 {
+    height: 20%; /* Initial height */
+}
+
+#bar2 {
+    height: 50%; /* Initial height */
+}
+
+#bar3 {
+    height: 30%; /* Initial height */
+}
+
+
+#progress-container
+{
+	display: flex;
+	align-items: center;
+	width: 100%;
+    height: 100%;
+	background-color: #e2e2e2;
+	border-radius: .25rem;
+	padding: 1px 0;
+}
+
+.progress-bar {
+	align-items: flex-start;
+}
+
+/* ------------------ INSIGHTS ENDS ----------------*/
+
+.btn.btn-light {
+	display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+
+	width: 170px;
+	height: 50px;
+	padding: 10px 30px;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 1.0), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    border-radius: 30px;
+    transition: transform 0.3s, box-shadow 0.5s;
+	margin: 10px;
+}
+	
+/* -----------------FRIENDS------------------------ */
+
+#friends {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#friends_table {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#add_friend {
+	display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+#btn-add_friend {
+	padding: 10px 30px;
+	font-size: 1em;
+	font-weight: 500;
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+	cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.5s;
+	margin-left: 10px;
+}
+
+#btn-add_friend:hover {
+	transform: scale(1.1);
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+    color: black;
+}
+
+#friends_table_body, #friends_table_footer {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#friends_table_body {
+	border: 1.5px solid white;
+}
+
+/* -----------------FRIENDS END------------------------ */
+
+/* -----------------VIEW EFFECTS------------------------ */
+
+.fade-out {
+    transition: opacity 1s;
+    opacity: 0;
+}
+
+/* -----------------VIEW EFFECTS END------------------------ */
+
+/* -----------------STATISTICS------------------------ */
+
+#statistics {
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+}
+
+.row {
+    margin-right: 0px!important;
+    margin-left: 0px!important;
+}
+
+#row_statistics {
+	width: 100%;
+	height: 50%;
+}
+
+#one, #two, #three, #four {
+	width: 100%;
+	height: 100%;
+}
+
+#game_1, #game_2, #game_3, #game_4 {
+	width: 90%;
+	height: 85%;
+	padding: 10px 30px;
+	border-radius: 150px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	font-weight: 500;
+	background: #ececec;
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 1.0), 10px 10px 15px rgba(70, 70, 70, 0.12);
+	cursor: pointer;
+    border: 3px solid #ececec;
+    transition: transform 0.3s, box-shadow 0.5s;
+}
+
+
+
+#game_1:nth-child(2), #game_2:nth-child(2), #game_3:nth-child(2), #game_4:nth-child(2) {
+	border: 3px solid #ececec;
+	background: #ececec;
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    cursor: pointer;
+}
+
+#game_1:hover, #game_2:hover, #game_3:hover, #game_4:hover {
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+    color: #fff; /* Cambio del colore del testo al passaggio del mouse */
+}
+
+#stat1 {
+	border: 2px!important;
+	border-color: red;
+}
+
+#stat2 {
+	border: 2px;
+	border-color: red;
+	background-color: #ececec;
+}
+
+#stat3 {
+	border: 2px;
+	border-color: red;
+	background-color: #ececec;
+}
+
+#stat4 {
+	border: 10px;
+	border-color: red;
+	background-color: #ececec;
+}
+
+.stat_square {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 2em;
+	font-weight: bold;
+	border: 2px;
+	border-color: green;
+	background-color: transparent;
+}
+
+/* -----------------STATISTICS END------------------------ */
+
+
+/* -----------------NAVBAR------------------------ */
+
+#navbar {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+
+	width: 90%;
+	background: #ececec;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 1.0), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    border-bottom-left-radius: 100px;
+	border-bottom-right-radius: 100px;
+
+	/* word-wrap: break-word; */
+}
+
+#navbarNav {
+	display: flex;
+    justify-content: center;
+}
+
+ul.navbar-nav {
+	display: flex;
+	flex-direction: row;
+}
+
+#nav_login42_icon {
+    width: 20px;
+    height: 20px;
+	margin-top: 3px;
+    background-image: url('./assets/42.png');
+    background-size: cover;
+}
+
+#nav_home_icon, #nav_login_icon, #nav_registration_icon, #nav_login42_icon, #nav_userDetails_icon, #nav_font_icon, #nav_fade_icon, 
+#nav_home_text, #nav_login_text, #nav_registration_text, #nav_login42_text, #nav_userDetails_text, #nav_font_text, #nav_fade_text
+{
+	margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+	#nav_home_icon, #nav_login_icon, #nav_registration_icon, #nav_login42_icon, #nav_userDetails_icon, #nav_font_icon, #nav_fade_icon {
+		display: flex !important;
+	}
+
+	#nav_home_text, #nav_login_text, #nav_registration_text, #nav_login42_text, #nav_userDetails_text, #nav_font_text, #nav_fade_text {
+		display: none !important;
+	}
+
+	#navbar {
+		overflow: hidden;
+	}
+}
+
+li.nav-item button:focus {
+	box-shadow: none;
+}
+
+a.text-body-secondary {
+	margin: 4px;
+	transition: 0.2s;
+}
+
+a.text-body-secondary:hover {
+   transform: scale(1.3);
+}
+
+
+/* -----------------NAVBAR END------------------------ */
+
+/* -----------------FOOTER------------------------ */
+
+#footer {
+	width: 100%;
+}
+
+i.bi.bi-facebook::before {
+	color: #1877F2;
+}
+
+i.bi.bi-twitter::before {
+	color: #1DA1F2;
+}
+
+i.bi.bi-instagram::before {
+	color: #ffffff;
+	background: radial-gradient(circle at 30% 110%, 
+		#ffdb8b 0%, 
+		#ee653d 25%, 
+		#d42e81 50%, 
+		#a237b6 75%, 
+		#3e57bc 100%);
+	border-radius: 50%;
+}
+
+/* -----------------FOOTER END------------------------ */
+
+/* -----------------FONTS------------------------ */
+
+.kanit-thin {
+	font-family: "Kanit", sans-serif;
+	font-weight: 100;
+	font-style: normal;
+  }
+  
+  .kanit-extralight {
+	font-family: "Kanit", sans-serif;
+	font-weight: 200;
+	font-style: normal;
+  }
+  
+  .kanit-light {
+	font-family: "Kanit", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+  }
+  
+  .kanit-regular {
+	font-family: "Kanit", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+  }
+  
+  .kanit-medium {
+	font-family: "Kanit", sans-serif;
+	font-weight: 500;
+	font-style: normal;
+  }
+  
+  .kanit-semibold {
+	font-family: "Kanit", sans-serif;
+	font-weight: 600;
+	font-style: normal;
+  }
+  
+  .kanit-bold {
+	font-family: "Kanit", sans-serif;
+	font-weight: 700;
+	font-style: normal;
+  }
+  
+  .kanit-extrabold {
+	font-family: "Kanit", sans-serif;
+	font-weight: 800;
+	font-style: normal;
+  }
+  
+  .kanit-black {
+	font-family: "Kanit", sans-serif;
+	font-weight: 900;
+	font-style: normal;
+  }
+  
+  .kanit-thin-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 100;
+	font-style: italic;
+  }
+  
+  .kanit-extralight-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 200;
+	font-style: italic;
+  }
+  
+  .kanit-light-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 300;
+	font-style: italic;
+  }
+  
+  .kanit-regular-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 400;
+	font-style: italic;
+  }
+  
+  .kanit-medium-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 500;
+	font-style: italic;
+  }
+  
+  .kanit-semibold-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 600;
+	font-style: italic;
+  }
+  
+  .kanit-bold-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 700;
+	font-style: italic;
+  }
+  
+  .kanit-extrabold-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 800;
+	font-style: italic;
+  }
+  
+  .kanit-black-italic {
+	font-family: "Kanit", sans-serif;
+	font-weight: 900;
+	font-style: italic;
+}
+
+.jaro-third {
+  font-family: "Jaro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sedan-sc-regular {
+font-family: "Sedan SC", serif;
+font-weight: 400;
+font-style: normal;
+}
+
+
+.montserrat-second {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.poetsen-one-regular {
+	font-family: "Poetsen One", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+}  
+
+/* -----------------FONTS END------------------------ */
+
+/* -----------------USER DETAILS------------------------ */
+
+#userDetails {
+    flex-direction: column;
+    align-items: center;  
+    justify-content: center;
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+button#btn-landing.btn.btn-light {
+	border: 3px;
+	border-color: #6a0808;
+}
+
+#userMenuToggle.toggle {
+	border: 2px;
+}
+
+.friends-icon-container {
+    pointer-events: auto;
+    position: relative; 
+    z-index: 1000; 
+    transition: 0.2s;
+    margin-right: 5px;
+}
+
+.friends-icon-container:hover {
+    transform: scale(1.3); 
+}
+
+.logout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    transition: 0.3s;
+    border: 2px solid #ececec;
+    outline: none;
+    font-size: 23px;
+    position: relative;
+    margin-top: 20px;
+    transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s; /* Uniforma le transizioni */
+    cursor: pointer; /* Indica che è un elemento cliccabile */
+}
+
+.logout:hover {
+    color: #fff; /* Cambia il colore del testo/icona al passaggio del mouse */
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+    background-color: #d9d9d9; /* Grigio più chiaro per il background al hover */
+    box-shadow: 
+
+        0 0 300000px rgba(var(--clr), 0.5), 
+        0 0 500000px rgba(var(--clr), 0.25), 
+        0 0 700000px rgba(var(--clr), 0.1);
+}
+
+.logout a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.logout li {
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform-origin: 200px;
+    transition: 0.5s;
+    transition-delay: calc(0.05s);
+    transform: rotate(0deg) translateX(150px) translateZ(-100px);
+    opacity: 0;
+
+}
+
+.logout.active {
+    /* Aggiungi qui gli stili specifici per il logout quando è active */
+    transform: scale(1.1); /* per esempio, ingrandimento */
+    background-color: #ccc; /* Cambia colore di sfondo quando è active */
+}
+
+.logout.active li {
+    transform: rotate(calc(180deg / 3 * var(--i))) translateZ(50px);
+    opacity: 1;
+}
+
+.logout li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    color: var(--clr);
+    transition: 0.3s;
+    border: 8px solid #ececec;
+    outline: none;
+    font-size: 23px;
+    position: relative;
+}
+
+.logout ion-icon {
+    color: red; /* Imposta il colore dell'icona in rosso */
+    transition: color 0.3s; /* Una transizione morbida per il cambio di colore */
+}
+
+.logout:hover ion-icon {
+    color: #fff; /* Cambia il colore in bianco al passaggio del mouse */
+}
+
+
+.logout a:hover {
+	border-radius: 50%;
+    color: #fff; /* Cambia il colore dell'icona al passaggio del mouse */
+    transform: scale(1.1) rotate(calc(180deg / -3 * var(--i)));
+    box-shadow: 
+        0 0 300000px var(--clr), 
+        0 0 500000px var(--clr), 
+        0 0 700000px var(--clr); /*Aumento della luminosità al hover*/
+}
+
+.logout:hover a {
+    border-radius: 50%;
+    box-shadow:
+        0 0 15px rgba(255, 255, 255, 0.5),
+        0 0 15px rgba(70, 70, 70, 0.12),
+        inset 0 0 15px rgba(255, 255, 255, 0.5),
+        inset 0 0 15px rgba(70, 70, 70, 0.12);
+}
+
+.menu {
+    
+    position: relative;
+    width: 400px;
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.menu li {
+    position: absolute;
+    left: 0;
+    list-style: none;
+    transform-origin: 200px;
+    transition: 0.5s;
+    transition-delay: calc(0.05s * var(--i));
+    transform: rotate(0deg) translateX(150px) translateZ(-100px);
+    opacity: 0;
+}
+
+.menu.active li {
+    transform: rotate(calc(180deg / 3 * var(--i))) translateZ(30px);
+    opacity: 1;
+}
+
+.menu li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    transform: rotate(calc(180deg / -3 * var(--i)));
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    color: var(--clr);
+    transition: 0.3s;
+    border: 2px solid #ececec;
+    outline: none;
+    font-size: 23px;
+    position: relative;
+}
+
+.menu li a:hover {
+    color: #fff; /* Cambia il colore dell'icona al passaggio del mouse */
+	background-color: #ececec;
+    transform: scale(1.1) rotate(calc(180deg / -3 * var(--i)));
+    box-shadow: 
+        0 0 300000px var(--clr), 
+        0 0 500000px var(--clr), 
+        0 0 700000px var(--clr); /* Aumento della luminosità al hover */
+}
+
+.menu li:hover a {
+    
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+
+.toggle {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000000;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    cursor: pointer;
+    box-shadow: 0 0px 4px rgba(0, 0, 0, 0.15);
+    font-size: 1em;
+    transition: transform 1.25s;
+}
+
+.menu.active .toggle {
+    transform: rotate(225deg);
+}
+
+#userDetails p {
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover; 
+    border: 3px solid #333; 
+    margin-bottom: 30px;
+    background-color: red;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    transition: width 0.5s, height 0.5s, box-shadow 0.5s;
+    display: flex;
+    flex-direction: column;
+	border-radius: 30px !important;
+}
+
+.card:hover {
+    height: 400px;
+    width: 700px;
+    box-shadow:
+        -10px -10px 15px rgba(255, 255, 255, 0.5),
+        10px 10px 15px rgba(70, 70, 70, 0.12),
+        inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+        inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+
+.imgBox {
+	position: absolute;
+	left: 50%;
+	top: -70px;
+	transform: translateX(-50%) translateY(-5%);
+	width: 150px;
+	height: 150px;
+	background: #fff;
+	border-radius: 50%;
+	box-shadow: -20px -20px 30px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+	overflow: hidden;
+    transition: transform 0.5s;
+    border: 2px solid #ececec;
+}
+
+.card:hover .imgBox {
+	height: 150px;
+	width: 150px;
+}
+
+.imgBox img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+
+.card .content {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+	align-content: flex-start;
+    border-radius: 30px;
+    overflow: hidden;
+}
+
+.card .content .details {
+	margin-top: 40px;
+	border-radius: 15px;
+	padding: 60px;
+	text-align: center;
+	width: 100%;
+	transition: 0.5s;
+	transform: translateY(150px);
+}
+
+.card:hover .content .details {
+	transform: translateY(0px);
+}
+
+.card .content .details h2 {
+	font-size: 1.25em;
+	font-weight: 600;
+	color: #555;
+	line-height: 0.1em;
+}
+
+.card .content .details h2 span {
+	font-size: 0.75em;
+	font-weight: 500;
+	opacity: 0.5;
+	line-height: 6.5em;
+}
+
+.card .content .details .actionButton {
+	display: flex;
+	margin: 20px 0;
+	justify-content: space-between;
+
+}
+
+.card .content .details .actionButton button {
+	display: flex;
+	padding: 10px 30px;
+	border: none;
+	outline: none;
+	font-size: 1em;
+	font-weight: 500;
+	background: #ececec;
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+	cursor: pointer;
+    border: 3px solid #ececec;
+    transition: transform 0.3s, box-shadow 0.5s;
+}
+
+.card .content .details .actionButton button:nth-child(2) {
+	border: 3px solid #ececec;
+	background: #ececec;
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    cursor: pointer;
+}
+
+.card .content .details .actionButton button:hover {
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+    color: #fff; /* Cambio del colore del testo al passaggio del mouse */
+}
+
+/* -----------------USER DETAILS END------------------------ */
+
+/* -----------------REGISTRATION------------------------ */
+
+input[type="text"], input[type="password"], input[type="email"], input[type="date"] {
+    margin: 10px 0;
+    padding: 8px;
+    width: 200px;
+}
+
+button {
+    cursor: pointer;
+    padding: 10px 20px;
+    margin: 5px;
+}
+
+input.invalid {
+    border: 2px solid red;
+}
+
+#errorMessages {
+    color: red;
+    margin-top: 10px;
+}
+
+#btn-registration-submit:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+#btn-registration-submit:not(:disabled) {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* -----------------REGISTRATION END------------------------ */
+
+/* -----------------ADD FRIEND FORM------------------------ */
+
+/* Stile per il form di aggiunta amico */
+#addFriendForm {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    padding: 10px;
+    background-color: #f9f9f9; /* Sfondo leggero per il form */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombra leggera per un effetto sollevato */
+    border-radius: 8px;
+    transform: translateY(400px) translateX(-350px);
+    transition: 0.5s;
+    border: 2px solid #ececec;
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+}
+
+#addFriendForm.active {
+    opacity: 1;
+}
+
+#addFriendForm {
+    max-height: 500px; /* Sufficiente per coprire il contenuto del form */
+    opacity: 1;
+}
+
+#addFriendForm input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 200px; /* Larghezza specifica per l'input */
+}
+
+#addFriendForm button {
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+#addFriendForm button:hover {
+    background-color: #45a049; /* Cambio di colore al passaggio del mouse */
+}
+
+#bong_invite, #space_invite, #tournament_invite {
+    background-color: white;
+	width: 90px;
+    outline: none;
+	margin-left: 3px;
+    transition: background-color 0.1s, border-color 0.1s, transform 0.1s;
+    border: 2px solid transparent;
+	border-radius: 42%;
+}
+
+#bong_invite:hover, #space_invite:hover, #tournament_invite:hover {
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+    color: black; /* Cambio del colore del testo al passaggio del mouse */
+}
+
+/* -----------------ADD FRIEND FORM END------------------------ */
+
+/* -----------------SETTINGS------------------------ */
+
+.settings {
+	position: relative;
+	width: 300px;
+	height: auto;
+    border-radius: 35px;
+    box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+	transition: height 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    perspective: 10000px;
+    right: -370px; /* Distanza dal lato destro del contenitore */
+    bottom: -200px; /* Distanza dal fondo del contenitore */
+    overflow: hidden;
+}
+
+.settingsContent {
+    flex: 1; /* Prende tutto lo spazio disponibile */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.settingsDetails {
+    flex-grow: 0; /* Non permettere ai dettagli di crescere, così i button restano in alto */
+}
+
+.circle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+}
+
+.circle {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-size: cover;
+    cursor: pointer;
+}
+
+/* -----------------SETTINGS END------------------------ */
+
+/* -------------------------CHANGE NICKNAME ------------------*/
+
+.actionSettingsButton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+	box-shadow: -10px -10px 15px rgba(255, 255, 255, 0.5), 10px 10px 15px rgba(70, 70, 70, 0.12);
+    transition: width 0.5s, height 0.5s, box-shadow 0.5s;
+	border-radius: 30px !important;
+}
+
+.actionSettingsButton:hover {
+	box-shadow:
+		-10px -10px 15px rgba(255, 255, 255, 0.5),
+		10px 10px 15px rgba(70, 70, 70, 0.12),
+		inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+		inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+}
+
+#btn-change_nickname:hover, #btn-change_propic:hover, #confirmButton {
+	border-radius: 42%;
+	color: black;
+}
+
+/* -------------------------CHANGE NICKNAME ENDS ------------------*/
+
+/* -----------------GAME------------------------ */
+
+.full-width-button {
+    width: 80%;
+    margin: 10px auto;
+    box-sizing: border-box;
+    background-color: transparent;
+    outline: none;
+    transition: background-color 0.1s, border-color 0.1s, transform 0.1s;
+    border: 2px solid transparent;
+}
+
+.full-width-button:hover {
+    transform: scale(1.1); /* Effetto di ingrandimento al passaggio del mouse */
+    box-shadow:
+    -10px -10px 15px rgba(255, 255, 255, 0.5),
+    10px 10px 15px rgba(70, 70, 70, 0.12),
+    inset -10px -10px 15px rgba(255, 255, 255, 0.5),
+    inset 10px 10px 15px rgba(70, 70, 70, 0.12);
+
+    color: #fff; /* Cambio del colore del testo al passaggio del mouse */
+}
+
+.full-width-button:first-child {
+    margin-top: 2; /* Nessun margine superiore solo per il primo button */
+}
+
+#score {
+	position: absolute;
+	top: 10px;
+	width: 100%;
+	text-align: center;
+    justify-content: center;
+    align-items: center;
+	z-index: 100;
+    color:#ececec;
+    display: block;
+    font-size: xx-large;
+}
+
+#gameTitle {
+    position: absolute;
+	top: 10%;
+	width: 100%;
+	text-align: center;
+    justify-content: center;
+    align-items: center;
+	z-index: 100;
+    color:#ececec;
+    font-size: xx-large;
+}
+
+.gameButton {
+    position: absolute;
+	width: 20% !important;
+	z-index: 100;
+}
+
+.btn-game {
+    color:#ececec;
+    background-color: #555;
+    border: transparent;
+    border-radius: 10px;
+}
+
+.btn-game:hover {
+    color: #555;
+    background-color: #ececec;
+}
+
+#game {
+    position: relative;
+    min-width: 1200px;
+    min-height: 700px;
+    width: 1200px;
+    font-family: 'Retro Pixel';
+}
+
+/* -----------------GAME END------------------------ */

@@ -1,0 +1,60 @@
+curl -X POST https://localhost/api/login/changeusername \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NTkyNDk1LCJpYXQiOjE3MTQ1OTE1OTUsImp0aSI6IjA1NzRmMzA0ZjlhYTQ5NTNhYzdmZTFmZWE2N2ZmMjk2IiwidXNlcl9pZCI6MX0.wo9l1N--kPi-flSiHz8s9veOzKOeQ0Dks43GpQgtKNg" \
+-H "X-CSRFToken: 7IwlBFaesnftarrnoPetOjUVpmSXbGo2" \
+-d '{"username": "newUsername"}' \
+-b "csrftoken=7IwlBFaesnftarrnoPetOjUVpmSXbGo2"
+
+
+ Method: POST
+14-ft_transcendence-backend-1   | URL: https://localhost/api/login/changeusername
+14-ft_transcendence-backend-1   | Headers:
+14-ft_transcendence-backend-1   | Content-Length: 21
+14-ft_transcendence-backend-1   | Content-Type: application/json
+14-ft_transcendence-backend-1   | X-Forwarded-For: 172.21.0.1
+14-ft_transcendence-backend-1   | X-Forwarded-Proto: https
+14-ft_transcendence-backend-1   | Host: localhost
+14-ft_transcendence-backend-1   | Connection: close
+14-ft_transcendence-backend-1   | Sec-Ch-Ua: "Chromium";v="124", "Google Chrome";v="124", "Not-A.Brand";v="99"
+14-ft_transcendence-backend-1   | X-Csrftoken: 2evzS4lPgYF69A27CdCgvThOKuyclGUD
+14-ft_transcendence-backend-1   | Sec-Ch-Ua-Mobile: ?0
+14-ft_transcendence-backend-1   | User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36
+14-ft_transcendence-backend-1   | Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NjA3NjcxLCJpYXQiOjE3MTQ2MDY3NzEsImp0aSI6Ijk3ZDk1Zjc3N2FkZjRlYWI4MDBjNjRjYjIzMTVhMDY3IiwidXNlcl9pZCI6Mn0.CWSZbzOCQuaoeXcl_4qPtGvHleL7btKypUV8AYwHEro
+14-ft_transcendence-backend-1   | Sec-Ch-Ua-Platform: "Windows"
+14-ft_transcendence-backend-1   | Accept: */*
+14-ft_transcendence-backend-1   | Origin: https://localhost
+14-ft_transcendence-backend-1   | Sec-Fetch-Site: same-origin
+14-ft_transcendence-backend-1   | Sec-Fetch-Mode: cors
+14-ft_transcendence-backend-1   | Sec-Fetch-Dest: empty
+14-ft_transcendence-backend-1   | Referer: https://localhost/login
+14-ft_transcendence-backend-1   | Accept-Encoding: gzip, deflate, br, zstd
+14-ft_transcendence-backend-1   | Accept-Language: en-US,en;q=0.9
+14-ft_transcendence-backend-1   | Cookie: csrftoken=2evzS4lPgYF69A27CdCgvThOKuyclGUD; sessionid=p3sx5ffk90l6goy6n7w7rl7nmqkw51vt
+14-ft_transcendence-backend-1   | POST Data:
+14-ft_transcendence-backend-1   | Error during username change: You cannot access body after reading from request's data stream
+14-ft_transcendence-backend-1   | Watching for file changes with StatReloader
+
+curl -X POST "https://localhost/api/login/changeusername" \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNDcwMDIzNCwiaWF0IjoxNzE0NjEzODM0LCJqdGkiOiIyMTgwNWZkMDhmMjQ0NjU5YWFlYTczODcyOWIwYzg3MSIsInVzZXJfaWQiOjF9.vBkFrKkDc9AOYzMVvlcQUKWxZNfR8U7T6qWnKshMShw" \
+     -H "X-Csrftoken: nuIiXV9rH11uhrZhbJMUSlVhopCLPyf4G" \
+     -H "Cookie: csrftoken=nuIiXV9rH11uhrZhbJMUSlVhopCLPyf4G; sessionid=4f20ukr5yce46kk32b7rcappb38zcgpq" \
+     -d '{"username": "www"}' \
+     --compressed
+
+curl -X POST "https://localhost/api/login/changeusername" \
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE0NjE1MDE3LCJpYXQiOjE3MTQ2MTQxMTcsImp0aSI6ImE4ZTRhZDFhY2E0OTQ3YzA5ZGIzMmZhNGU1YjIxMzViIiwidXNlcl9pZCI6MX0.9BXqsqWrnSHpnuVUlP3WYviTdROU5up_0xRW0-B44S4" \
+     -H "Content-Type: application/json" \
+     -d '{"username": "www"}'
+
+
+curl -X POST "https://localhost/api/login/changeusername" \
+     -H "Content-Type: application/json" \
+     -H "Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNDgwOTU3MCwiaWF0IjoxNzE0NzIzMTcwLCJqdGkiOiJhOWY3ZWFiMDRlMGI0NWNiODM1NmMzZWJmNDBjMWVhMyIsInVzZXJfaWQiOjF9.mzGI6pQbjSudgbbUDw1oxGwlnHYQLRX8jpAKyD3be6U" \
+     -H "Cookie: csrftoken=zd8Cjbofrhid2b6slPcBH3XUNzoQavPM; sessionid=6j9wpgqlyyn8jpnte0xlsoij8qo7pocf" \
+     -d '{"username": "ww"}' \
+     --include \
+     --insecure
+
+https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-4f45ed71eaa3ca3cb82602319e1bd0611d8cbecdb25af42c6d49bfdd2ebb15e6&redirect_uri=https%3A%2F%2Flocalhost%2Fapi%2F42oauth&response_type=code
+https://api.intra.42.fr/oauth/authorize?client_id=u-s4t2ud-4f45ed71eaa3ca3cb82602319e1bd0611d8cbecdb25af42c6d49bfdd2ebb15e6&redirect_uri=https%3A%2F%2Flocalhost%2Fapi%2F42aouth&response_type=code

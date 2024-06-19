@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transcendence App</title>
+    <link rel="stylesheet" href="./styles.css">
+	<link rel="shortcut icon" href="https://localhost/ft_transcendence/favicon.ico" type="image/x-icon">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poetsen+One&family=Sedan+SC&display=swap" rel="stylesheet">
+
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body style="display: flex;">
+	
+	<nav id="navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="collapse navbar-collapse" id="navbarNav">	
+			<ul class="navbar-nav">
+				
+				<li class="nav-item">
+					<button type="button" id="nav-home" class="btn btn-default navbar-btn" destination="/ft_transcendence/">
+						<span id="nav_home_icon"><i class="bi bi-house-door-fill"></i></span>
+						<span id="nav_home_text" class="nav-text">Home</span>
+					</button>					
+				</li>
+				<li class="nav-item">
+					<button type="button" id="nav-login" class="btn btn-default navbar-btn" destination="/ft_transcendence/login">
+						<span id="nav_login_icon"><i class="bi bi-box-arrow-in-right"></i></span>
+						<span id="nav_login_text" class="nav-text">Login</span>
+					</button>
+				</li>
+				<li class="nav-item">
+					<button type="button" id="nav-registration" class="btn btn-default navbar-btn" destination="/ft_transcendence/registration">
+						<span id="nav_registration_icon"><i class="bi bi-pencil-square"></i></span>
+						<span id="nav_registration_text" class="nav-text">Register</span>
+					</button>
+				</li>
+				<li class="nav-item">
+					<button type="button" id="nav-login42" class="btn btn-default navbar-btn" destination="/ft_transcendence/login42">
+						<span id="nav_login42_icon" class="svg-icon"></span>
+						<span id="nav_login42_text" class="nav-text">Login 42</span>
+					</button>
+				</li>
+				<li class="nav-item">
+					<button type="button" id="nav-userDetails" class="btn btn-default navbar-btn" destination="/ft_transcendence/userDetails">
+						<span id="nav_userDetails_icon"><i class="bi bi-person-bounding-box"></i></span>
+						<span id="nav_userDetails_text" class="nav-text">User Details</span>
+					</button>
+				</li>
+				<li class="nav-item">
+					<button type="button" id="nav-font" class="btn btn-default navbar-btn">
+						<span id="nav_font_icon"><i class="bi bi-file-earmark-font"></i></span>
+						<span id="nav_font_text" class="nav-text">Change Font</span>
+					</button>  
+				</li>
+				<li class="nav-item">
+					<button type="button" id="nav-fade_away" class="btn btn-default navbar-btn">
+						<span id="nav_fade_icon"><i class="bi bi-hypnotize"></i></span>
+						<span id="nav_fade_text" class="nav-text">Fade Away</span>
+					</button>
+				</li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="container">
+
+		<div id="gorilla" style="display: none;">
+			<img id="gorilla_img" src="assets/middle_finger_gorrrrilla.png" style="margin-left: 12%; width: 720px; height: 600px;">
+		</div>
+
+		<div id="app">
+
+			<div id="landing">
+				<button id="btn-landing" class="btn btn-light">Welcome User!</button>
+				<!-- <button id="btn-font" class="btn btn-light" style="margin-top: 5px">Change Font</button> -->
+				<button destination="/ft_transcendence/login" id="btn-login-submit" class="btn btn-light" style="display: none;">Login</button>
+				<button destination="/ft_transcendence/registration" id="btn-registration-submit" class="btn btn-light" style="display: none;">New User</button>
+			</div>
+
+			<div id="login">
+				<h2>Login</h2>
+				<input type="text" id="login_username" placeholder="Username">
+				<input type="password" id="login_password" placeholder="Password">
+				<button destination="/ft_transcendence/userDetails" class="btn btn-light" id="btn-login">Login</button>
+				<button destination="/ft_transcendence/userDetails" class="btn btn-light" id="btn-42login">Login 42</button>
+			</div>
+
+			<div id="registration">
+				<h2>Register</h2>
+				<form id="form_registration">
+					<input type="text" id="firstName" placeholder="Nome">
+					<input type="text" id="lastName" placeholder="Cognome">
+					<input type="date" id="birthDate" placeholder="Data di Nascita">
+					<input type="email" id="email" placeholder="Email">
+					<input type="text" id="newUsername" placeholder="Username">
+					<input type="password" id="newPassword" placeholder="Password">
+					<button destination="/ft_transcendence/userDetails" class="btn btn-light" id="btn-registration" disabled="true">Register</button>
+				</form>
+			</div>
+
+			<div id="statistics">
+
+				<div class="table" id="stat_table">
+					<div class="row" id="row_statistics">
+						<div class="col-6" id="stat1">
+							<div class="stat_square" id="one">
+								<button class="statistic-butt" destination="/ft_transcendence/insights" id="game_1"></button>
+							</div>
+						</div>
+						<div class="col-6" id="stat2">
+							<div class="stat_square" id="two">
+								<button class="statistic-butt" destination="/ft_transcendence/insights" id="game_2"></button>
+							</div>
+						</div>
+					</div>
+					<div class="row" id="row_statistics">
+						<div class="col-6" id="stat3">
+							<div class="stat_square" id="three">
+								<button class="statistic-butt" destination="/ft_transcendence/insights" id="game_3"></button>
+							</div>
+						</div>
+						<div class="col-6" id="stat4">
+							<div class="stat_square" id="four">
+								<button class="statistic-butt" destination="/ft_transcendence/insights" id="game_4"></button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="insights">
+					
+				</div>
+
+				<div id="insights-right">
+					<div id="graph">
+						<canvas id="stat_canvas"></canvas>
+					</div>
+					<div id="podium">
+						<div class="bar" id="bar1"></div>
+						<div class="bar" id="bar2"></div>
+						<div class="bar" id="bar3"></div>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div id="friends">
+
+				<table id="friends_table" class="table table-hover">
+					<tbody id="friends_table_body">
+						
+					</tbody>
+					<tfoot id="friends_table_footer">
+						
+					</tfoot>
+				</table>
+
+				<form id="add_friend">
+					<input type="text" name="username" id="friendUsername" placeholder="Inserisci username">
+					<div id="btn-add_friend">Aggiungi amico</div>
+				</form>
+
+			</div>
+
+			<!-- ??? l'id in cui è il gioco è bong e non più game -->
+			<div id="game" style="align-items: center; justify-content: center;">
+				<div id="bong" style="align-items: center; justify-content: center;">
+					<div id="score"></div>
+					<div id="gameTitle"> TRASCENDENCE </div>
+					<button id="gameButton1" class="btn-block gameButton btn-game" style="top: 50%"> Vs Ai </button>
+					<button id="gameButton2" class="btn-block gameButton btn-game" style="top: 60%"> Vs G2 </button>
+					<button id="gameButton3" class="btn-block gameButton btn-game" style="top: 70%"> QUIT </button>
+				</div>
+			</div>
+
+			<div>
+				<canvas id="space" style="display: none;">		
+				</canvas>
+				<div id="menu" style="display: none;">
+					<button id="start-game" class="btn-block gameButton btn-game" style="top: 40%; margin-left: 200px;">PvP</button>
+					<button id="exit-game" class="btn-block gameButton btn-game" style="top: 50%; margin-left: 200px;">QUIT</button>
+				</div>
+			</div>
+
+
+			<div class="chat" id="chat">
+				<div class="canvas-container">
+					<canvas class="canvas" id="canvas_pong_2D"	></canvas>
+				</div>
+				<button id="play_again_2D">
+					Play again!
+				</button>
+			</div>
+
+			<div id="settings">
+				<div id="settingsCard" class="settingsCard">
+					<div id="settingsContent" class="settingsContent">
+						<div id="settingsDetails" class="settingsDetails">
+							<div id="actionSettingsButton" class="actionSettingsButton">
+								<button id="btn-change_nickname" class="full-width-button">Change Nickname</button>
+								<!-- <button id="btn-change_nickname" class="btn btn-block">Change Nickname</button> -->
+								<input type="text" id="inputNN" placeholder="New Nickname" style="display: none;">
+								<button id="confirmButton" class="full-width-button" style="display: none;">Confirm</button>
+								<!-- <button id="confirmButton" class="btn btn-block" style="display: none;">Confirm</button> -->
+								<div id="errMess" class="errMess" style="display: none; color: red;">Name not available</div>
+								<button id="btn-change_propic" class="full-width-button">Change Profile Image</button>
+								<div id="propic_grid" class="circle-container">
+									<button class="circle" id="circle_1" data-bg-img="/media/default/ancient.webp"></button>
+									<button class="circle" id="circle_2" data-bg-img="/media/default/black-astronauta.webp"></button>
+									<button class="circle" id="circle_3" data-bg-img="/media/default/chef.webp"></button>
+									<button class="circle" id="circle_4" data-bg-img="/media/default/clown.webp"></button>
+									<button class="circle" id="circle_5" data-bg-img="/media/default/detective.webp"></button>
+									<button class="circle" id="circle_6" data-bg-img="/media/default/doctor.webp"></button>
+									<button class="circle" id="circle_7" data-bg-img="/media/default/droid.webp"></button>
+									<button class="circle" id="circle_8" data-bg-img="/media/default/fencer.webp"></button>
+									<button class="circle" id="circle_9" data-bg-img="/media/default/geisha.webp"></button>
+									<button class="circle" id="circle_10" data-bg-img="/media/default/hacker.webp"></button>
+									<button class="circle" id="circle_11" data-bg-img="/media/default/lawyer.webp"></button>
+									<button class="circle" id="circle_12" data-bg-img="/media/default/main.webp"></button>
+									<button class="circle" id="circle_13" data-bg-img="/media/default/militarro.webp"></button>
+									<button class="circle" id="circle_14" data-bg-img="/media/default/minator.webp"></button>
+									<button class="circle" id="circle_15" data-bg-img="/media/default/pharmacist1.webp"></button>
+									<button class="circle" id="circle_16" data-bg-img="/media/default/pharmacist2.webp"></button>
+									<button class="circle" id="circle_17" data-bg-img="/media/default/philips1.webp"></button>
+									<button class="circle" id="circle_18" data-bg-img="/media/default/philips2.webp"></button>
+									<button class="circle" id="circle_19" data-bg-img="/media/default/priest.webp"></button>
+									<button class="circle" id="circle_20" data-bg-img="/media/default/professor.webp"></button>
+									<button class="circle" id="circle_21" data-bg-img="/media/default/samurai.webp"></button>
+									<button class="circle" id="circle_22" data-bg-img="/media/default/swimmer.webp"></button>
+									<button class="circle" id="circle_23" data-bg-img=""></button>			
+									<input type="file" id="fileInput" style="display: none;" accept="image/*">
+								</div>
+								<script>
+									document.addEventListener('DOMContentLoaded', function() {
+									var circles = document.querySelectorAll('.circle');
+								
+									circles.forEach(function(circle) {
+										var bgImg = circle.getAttribute('data-bg-img');
+										if (bgImg) {
+											circle.style.backgroundImage = `url(${bgImg})`;
+										}
+									});
+								});
+								</script>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- serve per far funzionare il check dei valori di input durante la registrazione -->
+			<div id="errorMessages"></div>
+			<!-- serve per far funzionare il submit della registrazione che avviene con successo -->
+
+			<div id="userDetails">
+
+				<div id="userActionsMenu" class="menu">
+					<div id="userMenuToggle" class="toggle">
+						<ion-icon name="add-outline"></ion-icon>
+						<!-- <i class="bi bi-plus"></i> -->
+					</div>
+					<!-- ??? -->
+					<!-- <ul id="menuList"> -->
+					<li style="--i: 0; --clr: #ff2972;" data-view="Statistics">
+						<a href="statistics" id="link_statistics" class="ion-link">
+							<!-- <i class="bi bi-house-door"></i> -->
+							<ion-icon name="bar-chart-sharp"></ion-icon>
+						</a>
+					</li>
+					<li style="--i: 1; --clr: #fee800;" data-view="AddFriend Page">
+						<a href="friends" id="link_add_friend" class="ion-link">
+							<!-- <i class="bi bi-person-plus"></i> -->
+							<ion-icon name="person-add-outline"></ion-icon>
+						</a
+							>
+					</li>
+					<li style="--i: 2; --clr: #fe00f1;" data-view="Chat Page">
+						<a href="chat" id="link_chat" class="ion-link">
+							<!-- <i class="bi bi-chat-dots"></i> -->
+							<ion-icon name="chatbox-outline"></ion-icon>
+						</a
+							>
+					</li>
+					<li style="--i: 3; --clr: #04fc43;" data-view="Settings Page">
+						<a href="settings" id="link_settings" class="ion-link">
+							<!-- <i class="bi bi-gear"></i> -->
+							<ion-icon name="settings-outline"></ion-icon>
+						</a>
+					</li>
+					<!-- </ul> -->
+				</div>
+
+				<div id="card" class="card">
+					<div class="friends-icon-container" id="friends-icon-container" style="position: absolute; top: 15px; right: 15px; display: flex; align-items: center;">
+						<!-- <i class="bi bi-people-fill" style="margin-right: 2px; font-size: 23px;"></i> -->
+						<ion-icon name="people" class="friends-icon-container>" style="margin-right: 2px; font-size: 23px;"></ion-icon>
+						<span id="friends_count" class="friends-count" style="font-size: 15px">0</span>
+					</div>
+					<div id="imgBox" class="imgBox">
+						
+					</div>
+					<div class="content" id="content">
+						<div class="details" id="details" style="position:relative; height:350px">
+							<h2 id="usern" name="usern" style="position:relative; font-size: 27px; top:0%"></h2>
+							<div id="actionButton" class="actionButton" style="position:relative; top:15%">
+								<button type="button" class="btn btn-light" id="btn-play_space" destination="/ft_transcendence/space">Play Space Invaders!</button>
+								<button type="button" class="btn btn-light" id="btn-play_pong" destination="/ft_transcendence/bong">Play Bong!</button>
+								<button type="button" class="btn btn-light" id="btn-play_tournament" destination="/ft_transcendence/bong" disabled>Organize Tournament!</button>
+							</div>
+							<div id="stats" class="stats" style="position:relative; top:20%">
+								<p id="games_played">Partite Giocate: <span id="games_played_placeholder"></span></p>
+								<p id="games_won">Partite Vinte: <span id="games_won_placeholder"></span></p>
+								<p id="games_lost">Partite perse: <span id="games_lost_placeholder"></span></p>
+								<p id="draws">Pareggi: <span id="draws_placeholder"></span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div id="logout" class="logout">
+					<a href="/" id="link_logout">
+						<ion-icon name="exit-outline"></ion-icon>
+					</a>
+					</li>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<footer id="footer" class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-bottom">
+		<div class="col-md-4 d-flex align-items-center justify-content-center">
+			<a class="mb-3 me-2 mb-md-0 text-body-secondary text-decoration-none lh-1">
+				<svg class="bi" width="30" height="24">
+					<use xlink:href="#bootstrap"></use>
+				</svg>
+			</a>
+			<span class="mb-3 mb-md-0 text-body-secondary">© 2024 Transcendence, Inc</span>
+		</div>
+		<ul class="nav col-md-4 justify-content-center list-unstyled d-flex">
+			<li class="ms-3"><a class="text-body-secondary gorilla_finger"><i class="bi bi-twitter"></i></a></li>
+			<li class="ms-3"><a class="text-body-secondary gorilla_finger"><i class="bi bi-facebook"></i></a></li>
+			<li class="ms-3"><a class="text-body-secondary gorilla_finger"><i class="bi bi-instagram"></i></a></li>
+		</ul>
+	</footer>
+
+	<!-- <script type="module" src="./app.js"></script> -->
+	<script type="module" src="./index.js"></script>
+</body>
+</html> 
